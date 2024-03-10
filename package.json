@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:gm-frontend": "node dist/gm-frontend/server/server.mjs",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadlessCustom",
-    "build:ci": "ng build --prod"
+    "build:ci": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title class="login-form-header">Zaloguj się</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Wprowadź swój email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Hasło</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Wprowadź swoje hasło">
+        </mat-form-field>
+        <div class="form-btns-wrapper">
+          <button mat-raised-button color="primary" type="submit">Zaloguj się</button>
+          <button mat-stroked-button color="primary" disabled>Zaloguj z OAuth</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

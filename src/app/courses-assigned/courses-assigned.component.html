@@ -1,7 +1,10 @@
 <section class="course-list">
   <mat-form-field>
     <mat-label>Semestr</mat-label>
-    <mat-select (selectionChange)="selectSemester($event)">
+    <mat-select
+      (selectionChange)="selectSemester($event)"
+      [(value)]="selectedSemester"
+    >
       @for (semester of semesters; track semester) {
       <mat-option [value]="semester.id">{{
         semester.semester_name
@@ -10,13 +13,14 @@
     </mat-select>
   </mat-form-field>
 
-  <div class="courses" *ngIf="selectedSemester != 0">
+  <div class="courses">
     <div class="action-buttons">
       <button mat-button (click)="accordion.openAll()">Rozwiń wszystkie</button>
       <button mat-button (click)="accordion.closeAll()">Zwiń wszystkie</button>
     </div>
     <mat-accordion multi>
-      <mat-expansion-panel *ngFor="let course of courses; index as i">
+      @for (course of courses; track course.id; let i = $index) {
+      <mat-expansion-panel>
         <mat-expansion-panel-header class="panel-course-name">
           <mat-panel-title> {{ course.name }} </mat-panel-title>
         </mat-expansion-panel-header>
@@ -25,6 +29,7 @@
           [index]="i"
         ></app-course-student-table>
       </mat-expansion-panel>
+      }
     </mat-accordion>
   </div>
 </section>

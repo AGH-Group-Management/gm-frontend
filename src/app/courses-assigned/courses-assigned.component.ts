@@ -4,6 +4,7 @@ import {
   MatFormField,
   MatLabel,
   MatOption,
+  MatSelectChange,
 } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
@@ -34,13 +35,13 @@ import { semestersData, semester1Data, semester2Data } from './mock-data';
   styleUrl: './courses-assigned.component.scss',
 })
 export class CoursesAssignedComponent {
-  courses: Course[] = [];
-  selectedSemester = 0;
+  courses: Course[] = semester1Data;
+  selectedSemester = 1;
   semesters = semestersData;
 
   @ViewChild(MatAccordion) accordion!: MatAccordion;
 
-  selectSemester(event: any) {
+  selectSemester(event: MatSelectChange) {
     this.selectedSemester = event.value;
     this.courses = this.selectedSemester === 1 ? semester1Data : semester2Data;
   }

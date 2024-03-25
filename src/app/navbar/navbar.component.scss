@@ -1,4 +1,10 @@
 .logo {
     margin-left: 2rem;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
 }

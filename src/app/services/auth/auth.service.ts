@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   baseApiUrl: string = env.baseApiUrl;
-  user?: User; 
+  user?: User;
 
   constructor(private http: HttpClient) { }
 
@@ -47,5 +47,10 @@ export class AuthService {
     this.user = undefined;
     sessionStorage.removeItem('user');
     sessionStorage.removeItem('token');
+  }
+
+  public isUserLoggedIn(): boolean{
+    const isEmpty = (obj: User) => JSON.stringify(obj) === '{}';
+    return !(this.user === undefined || isEmpty(this.user));
   }
 }

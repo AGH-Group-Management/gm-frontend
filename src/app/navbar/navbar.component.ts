@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../services/auth/auth.service';
-import { User } from '../models/User.model';
+import {AuthService} from "../services/auth/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.auth.getLoggedInUser();    
+    this.auth.getLoggedInUser();
   }
 
   onLogout() {
@@ -24,7 +23,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  get loggedInUser(): User | undefined {
-    return this.auth.user;
+  get loggedInUser(): boolean {
+    return this.auth.isUserLoggedIn();
   }
 }

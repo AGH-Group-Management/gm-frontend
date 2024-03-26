@@ -2,6 +2,7 @@
     <a class="logo" routerLink="/"><span>Galernicy</span></a>
     <span class="fill-remaining-space"></span>
     @if (loggedInUser) {
+        <a routerLink="/request-creation" mat-button>Tworzenie wniosku</a>
         <a routerLink="/requests" mat-button>Wnioski</a>
         <a routerLink="/courses-assigned" mat-button>Przypisane przedmioty</a>
         <a routerLink="/logout" (click)="onLogout()" mat-button>Wyloguj się</a>

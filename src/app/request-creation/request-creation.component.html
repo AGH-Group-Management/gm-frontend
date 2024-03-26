@@ -1,0 +1,42 @@
+<form [formGroup]="requestForm" (ngSubmit)="onSubmit()" class="vertical-form">
+  <mat-form-field>
+    <mat-label>Typ wniosku</mat-label>
+    <mat-select formControlName="requestType">
+      <mat-option *ngFor="let type of requestTypesMap  | keyvalue" [value]="type"> {{ type.value }} </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ng-container *ngIf="requestForm.get('requestTypeValue')?.value">
+    <ng-container *ngIf="requestForm.get('requestTypeValue')?.value === 'vacation'">
+      <mat-form-field>
+        <textarea matInput formControlName="description" placeholder="Opis" class="large-description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="startDate" placeholder="Data rozpoczęcia urlopu" type="text"
+          onfocus="(this.type='date')" [min]="getTodayDate()">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="endDate" placeholder="Data zakończenia urlopu" type="text"
+          onfocus="(this.type='date')" [min]="getTodayDate()">
+      </mat-form-field>
+    </ng-container>
+
+    <ng-container *ngIf="requestForm.get('requestTypeValue')?.value === 'change'">
+      <mat-form-field>
+        <textarea matInput formControlName="description" placeholder="Opis" class="large-description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="subjectFrom" placeholder="Przedmiot, z którego chce się przepisać">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="subjectTo" placeholder="Przedmiot, na który chcę się przepisać">
+      </mat-form-field>
+    </ng-container>
+
+    <ng-container *ngIf="requestForm.get('requestTypeValue')?.value === 'other'">
+      <mat-form-field>
+        <textarea matInput formControlName="description" placeholder="Opis" class="large-description"></textarea>
+      </mat-form-field>
+    </ng-container>
+    <button mat-raised-button color="primary" type="submit">Wyślij</button>
+  </ng-container>
+</form>

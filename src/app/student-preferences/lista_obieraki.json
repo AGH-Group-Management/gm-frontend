@@ -1,0 +1,42 @@
+[
+    {
+        "nazwa": "Systemy wbudowane",
+        "semestr": 6,
+        "aktualniePrzypisanychStudentow": 42
+    },
+    {
+        "nazwa": "Programowanie obiektowe",
+        "semestr": 4,
+        "aktualniePrzypisanychStudentow": 35
+    },
+    {
+        "nazwa": "Bazy danych",
+        "semestr": 5,
+        "aktualniePrzypisanychStudentow": 40
+    },
+    {
+        "nazwa": "Algorytmy i struktury danych",
+        "semestr": 3,
+        "aktualniePrzypisanychStudentow": 38
+    },
+    {
+        "nazwa": "Inżynieria oprogramowania",
+        "semestr": 5,
+        "aktualniePrzypisanychStudentow": 37
+    },
+    {
+        "nazwa": "Sieci komputerowe",
+        "semestr": 6,
+        "aktualniePrzypisanychStudentow": 45
+    },
+    {
+        "nazwa": "Grafika komputerowa",
+        "semestr": 4,
+        "aktualniePrzypisanychStudentow": 30
+    },
+    {
+        "nazwa": "Matematyka dyskretna",
+        "semestr": 3,
+        "aktualniePrzypisanychStudentow": 33
+    }
+]

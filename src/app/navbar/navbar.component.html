@@ -4,6 +4,7 @@
     @if (loggedInUser) {
         <a routerLink="/requests" mat-button>Wnioski</a>
         <a routerLink="/courses-assigned" mat-button>Przypisane przedmioty</a>
+        <a routerLink="/student-preferences" mat-button>Preferencje studenta</a>
         <a routerLink="/logout" (click)="onLogout()" mat-button>Wyloguj się</a>
     } @else {
         <a routerLink="/login" mat-button>Zaloguj się</a>

@@ -5,11 +5,13 @@ import { CoursesAssignedComponent } from './courses-assigned/courses-assigned.co
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DeanRequestsListComponent } from './dean-requests-list/dean-requests-list.component';
 import {authGuard} from "./services/auth/auth.guard";
+import {StudentPreferencesComponent} from "./student-preferences/student-preferences.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [authGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'courses-assigned', component: CoursesAssignedComponent , canActivate: [authGuard]},
   { path: 'requests', component: DeanRequestsListComponent, canActivate: [authGuard]},
+  { path: 'student-preferences', component: StudentPreferencesComponent},
   { path: '**', component: PageNotFoundComponent}
 ]

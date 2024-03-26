@@ -1,0 +1,16 @@
+<div class="grid-container">
+    <mat-grid-list cols="1" rowHeight="100px" gutterSize="30">
+        <mat-grid-tile class="title">Przypisane przedmioty</mat-grid-tile>
+        <mat-grid-tile *ngFor="let notRequiredSubject of notRequiredSubjects" class="subject">
+            {{ notRequiredSubject.name }} - Semestr: {{ notRequiredSubject.semester }} - Studenci: {{ notRequiredSubject.max_slots
+            }}
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="100px" gutterSize="30">
+        <mat-grid-tile class="title">Lista przedmiotów obieralnych</mat-grid-tile>
+        <mat-grid-tile *ngFor="let notRequiredSubject of notRequiredSubjects" class="subject">
+            {{ notRequiredSubject.name }} - Semestr: {{ notRequiredSubject.semester }} - Studenci: {{ notRequiredSubject.maxslots
+            }}
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
